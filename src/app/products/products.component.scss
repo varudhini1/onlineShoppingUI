@@ -1,0 +1,64 @@
+$mybgcolor: #f7797d;
+$myfontfamily: cursive;
+$mybuttoncolor: #edc7b7;
+
+.mat-grid-tile {
+  font-family: $myfontfamily;
+  text-align: left;
+  border: "3px double red";
+  font-size: medium;
+  letter-spacing: 1px;
+  gap: 10px;
+}
+.edit {
+  background-color: transparent;
+  margin-left: 15px;
+}
+.delete {
+  background-color: transparent;
+  color: #d33;
+}
+.orderProduct {
+  background-color: gainsboro;
+  border-radius: 8px;
+}
+.searchProduct {
+  background-color: whitesmoke;
+  width: 50%;
+  border-radius: 8px;
+}
+form {
+  width: 100%;
+  margin: 10px 0;
+}
+.buttons {
+  font-family: $myfontfamily;
+  position: absolute;
+  right: 10px;
+  font-size: smaller;
+}
+.details {
+  position: absolute;
+  left: 10px;
+}
+.newProduct {
+  font-family: $myfontfamily;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: gainsboro;
+  font-size: large;
+  border-radius: 8px;
+}
+
+.mat-grid-tile:nth-child(odd) {
+  background-color: #eaeaea;
+}
+
+.mat-grid-tile:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+a:hover {
+  color: black;
+}

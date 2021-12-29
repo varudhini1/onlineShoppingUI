@@ -1,0 +1,36 @@
+<form>
+  <div class="oldDetails">
+    <label><b>Product Name:</b></label
+    >{{ productDetail?.productName }}<br />
+  </div>
+  <div class="oldDetails">
+    <label><b>Available Quantity:</b></label
+    >{{ productDetail?.quantity }}<br />
+  </div>
+  <div class="oldDetails">
+    <label><b>Order Quantity:</b></label
+    >{{ orderDetail?.quantity }}<br />
+  </div>
+  <label><b>Quantity</b></label>
+  <input
+    type="number"
+    name="order.orderId"
+    [(ngModel)]="orders.quantity"
+    min="1"
+    required
+    #quantity="ngModel"
+  />
+  <div
+    class="validation"
+    *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)"
+  >
+    Number must be minimum 1
+  </div>
+  <button
+    class="update"
+    type="type"
+    (click)="updateOrder(orders.orderId, orders.quantity)"
+  >
+    Submit
+  </button>
+</form>

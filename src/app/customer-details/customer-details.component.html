@@ -1,0 +1,31 @@
+<form
+  #customerForm="ngForm"
+  (ngSubmit)="postCustomerDetails(customerForm.value)"
+>
+  <label><b>Customer Name</b></label
+  ><br />
+  <input
+    type="text"
+    name="productName"
+    placeholder="enter customer name"
+    ngModel
+  /><br /><br />
+  <label><b>Mobile Number</b></label
+  ><br />
+  <input
+    type="number"
+    name="number"
+    lable="Product Quantity"
+    placeholder="enter mobile number"
+    ngModel
+  /><br />
+  <label><b>Email Id</b></label
+  ><br />
+  <input
+    type="text"
+    name="productName"
+    placeholder="enter customer name"
+    ngModel
+  /><br /><br />
+  <button type="submit">Submit</button>
+</form>

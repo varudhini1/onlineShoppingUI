@@ -1,0 +1,38 @@
+<form>
+  <div class="oldDetails">
+    <label><b>Product Name:</b></label>
+    {{ productDetail?.productName }}
+    <br />
+    <label><b>Total Quantity:</b></label>
+    {{ productDetail?.quantity }}
+    <br />
+  </div>
+  <label><b>Quantity</b></label
+  ><br />
+  <input
+    type="number"
+    name="quantity"
+    min="1"
+    max="{{ productDetail?.quantity }}"
+    required
+    [(ngModel)]="orderDetails.quantity"
+    #quantity="ngModel"
+    autocomplete="off"
+  />
+  <div
+    class="validation"
+    *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)"
+  >
+    Number must be minimum 1 and within total quantity
+  </div>
+
+  <br /><br />
+  <button
+    type="submit"
+    class="customer"
+    (click)="orderProduct()"
+    [disabled]="quantity.invalid"
+  >
+    Submit
+  </button>
+</form>

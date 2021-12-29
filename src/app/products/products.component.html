@@ -1,0 +1,47 @@
+<form>
+  <input
+    class="searchProduct"
+    type="search"
+    name="productName"
+    placeholder="Search Product Name"
+    [(ngModel)]="productName"
+    (input)="searchProduct()"
+    autocomplete="off"
+  />
+  <a mat-button class="newProduct" type="submit" routerLink="/form"
+    >Add Product</a
+  >
+</form>
+<mat-grid-list cols="1" rowHeight="6.5em">
+  <ng-container *ngFor="let product of products">
+    <mat-grid-tile *ngIf="product.quantity > 0 && product.productName?.trim()">
+      <div class="details">
+        <b> Product Name :</b>{{ product.productName }}<br />
+        <b>Total Quantity:</b> {{ product.quantity }} <br />
+      </div>
+      <div class="buttons">
+        <a
+          mat-button
+          class="orderProduct"
+          type="submit"
+          [routerLink]="['/orderProduct/', product.productId]"
+          >Order</a
+        >
+        <a
+          mat-button
+          class="edit"
+          type="Edit"
+          [routerLink]="['/edit/', product.productId]"
+          ><mat-icon>edit</mat-icon></a
+        >
+        <a
+          mat-button
+          class="delete"
+          type="delete"
+          (click)="confirm(product.productId)"
+          ><mat-icon>delete_forever</mat-icon></a
+        >
+      </div>
+    </mat-grid-tile>
+  </ng-container>
+</mat-grid-list>

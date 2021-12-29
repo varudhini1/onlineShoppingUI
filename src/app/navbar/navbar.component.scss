@@ -1,0 +1,21 @@
+$fontcolor: white;
+$myColor: antiquewhite;
+.mat-toolbar {
+  background-image: linear-gradient(to left, #434343 20%, black 80%);
+  color: $fontcolor;
+}
+.viewOrderDetails {
+  display: flex;
+  gap: 1em;
+  color: $myColor;
+}
+.alignment {
+  flex: 1 1 auto;
+}
+.title {
+  font-size: larger;
+  color: $myColor;
+}
+.home {
+  color: $myColor;
+}

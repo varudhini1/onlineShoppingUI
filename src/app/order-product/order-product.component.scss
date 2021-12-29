@@ -1,0 +1,15 @@
+.oldDetails {
+  text-align: left;
+  background-image: linear-gradient(to left, #cfd9df, #e2ebf0);
+  color: black;
+}
+.validation {
+  color: red;
+  font-size: large;
+  font-family: cursive;
+}
+button:disabled,
+button[disabled] {
+  background-color: #cccccc;
+  color: #666666d5;
+}

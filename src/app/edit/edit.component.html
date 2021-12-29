@@ -1,0 +1,11 @@
+<form class="editForm">
+  <label><b>Product Name</b></label
+  ><br />
+  <input type="text" name="productName" [(ngModel)]="productItem.productName" />
+  <br /><br />
+  <label><b>Product Quantity</b></label
+  ><br />
+  <input type="number" name="quantity" [(ngModel)]="productItem.quantity" />
+  <br /><br />
+  <button type="submit" (click)="editProduct()">Update</button>
+</form>

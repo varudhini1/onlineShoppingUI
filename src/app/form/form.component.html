@@ -1,0 +1,26 @@
+<form
+  name="postProductForm"
+  #productForm="ngForm"
+  (ngSubmit)="postProduct(productForm.value)"
+>
+  <label><b>Product Name</b></label
+  ><br />
+  <input
+    type="text"
+    name="productName"
+    placeholder="enter product name"
+    ngModel
+    autocomplete="off"
+  /><br /><br />
+  <label><b>Product Quantity</b></label
+  ><br />
+  <input
+    type="number"
+    name="quantity"
+    lable="Product Quantity"
+    placeholder="enter quantity"
+    ngModel
+    autocomplete="off"
+  /><br />
+  <button type="submit">Submit</button>
+</form>
