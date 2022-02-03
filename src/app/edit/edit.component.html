@@ -5,7 +5,11 @@
   <br /><br />
   <label><b>Product Quantity</b></label
   ><br />
-  <input type="number" name="quantity" [(ngModel)]="productItem.quantity" />
+  <input
+    type="number"
+    name="totalQuantity"
+    [(ngModel)]="productItem.totalQuantity"
+  />
   <br /><br />
   <button type="submit" (click)="editProduct()">Update</button>
 </form>

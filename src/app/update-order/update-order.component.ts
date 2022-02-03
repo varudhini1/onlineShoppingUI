@@ -42,12 +42,8 @@ export class UpdateOrderComponent implements OnInit {
   }
   updateOrder(orderId: string, quantity: number) {
     this._orderService.updateOrder(orderId, quantity).subscribe({
-      next: (res: any) => {
-        Swal.fire(
-          'Good Job',
-          'You have updated the order!',
-          res.toLocaleLowerCase()
-        );
+      next: () => {
+        Swal.fire('Good Job', 'You have updated the order!', 'success');
         this._route.navigate(['/orderDetails']);
       },
     });

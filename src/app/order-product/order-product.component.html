@@ -4,7 +4,7 @@
     {{ productDetail?.productName }}
     <br />
     <label><b>Total Quantity:</b></label>
-    {{ productDetail?.quantity }}
+    {{ productDetail?.totalQuantity }}
     <br />
   </div>
   <label><b>Quantity</b></label
@@ -13,7 +13,7 @@
     type="number"
     name="quantity"
     min="1"
-    max="{{ productDetail?.quantity }}"
+    max="{{ productDetail?.totalQuantity }}"
     required
     [(ngModel)]="orderDetails.quantity"
     #quantity="ngModel"

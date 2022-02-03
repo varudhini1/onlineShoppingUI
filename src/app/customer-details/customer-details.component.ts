@@ -9,18 +9,17 @@ import { CustomerService } from 'src/services/customer/customer.service';
   styleUrls: ['./customer-details.component.scss'],
 })
 export class CustomerDetailsComponent implements OnInit {
+  customers: Customer[] = [];
   constructor(private _customerService: CustomerService) {}
+
+  ngOnInit(): void {}
 
   postCustomerDetails(data: Customer) {
     this._customerService.postCustomerDetails(data).subscribe({
-      next: (res: any) => {
-        Swal.fire(
-          'Good Job!',
-          'Customer Details got posted',
-          res.toLocaleLowerCase()
-        );
+      next: (res) => {
+        localStorage.setItem('CustomerId', res.customerId);
+        Swal.fire('Good Job!', 'Customer Details got posted', 'success');
       },
     });
   }
-  ngOnInit(): void {}
 }

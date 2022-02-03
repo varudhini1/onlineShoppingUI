@@ -1,12 +1,12 @@
 <table *ngIf="orders?.length > 0">
   <tr>
     <th><b>Product Name</b></th>
-    <th><b>Quantity</b></th>
+    <th><b>Order Quantity</b></th>
     <th><b>Edit Order</b></th>
     <th><b>Cancel Order</b></th>
   </tr>
   <tr *ngFor="let order of orders">
-    <td>{{ order?.product?.productName }}</td>
+    <td>{{ order?.productName }}</td>
     <td>{{ order.quantity }}</td>
     <td>
       <button

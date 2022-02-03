@@ -21,18 +21,16 @@ export class OrderDetailsComponent implements OnInit {
     this.viewOrderDetails();
   }
   viewOrderDetails() {
-    this._orderService.viewOrderDetails().subscribe((data) => {
-      data.forEach((orderItem) => {
-        this.getProductDetail(orderItem.productId).subscribe((res) => {
-          orderItem.product = res;
-        });
+    this._orderService.viewOrderDetails().subscribe((orderDetails) => {
+      orderDetails.forEach((orderItem) => {
+        this._productService
+          .getProductId(orderItem.productId)
+          .subscribe((product) => {
+            orderItem['productName'] = product?.productName;
+          });
       });
-      this.orders = data;
+      this.orders = orderDetails;
     });
-  }
-
-  getProductDetail(productid: string) {
-    return this._productService.getProductId(productid);
   }
 
   confirmation(orderId: string) {
@@ -47,12 +45,8 @@ export class OrderDetailsComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this._orderService.cancelOrder(orderId).subscribe({
-          next: (res: any) => {
-            Swal.fire(
-              'Cancelled',
-              'You have cancelled the order!',
-              res.toLocaleLowerCase()
-            );
+          next: () => {
+            Swal.fire('Cancelled', 'You have cancelled the order!', 'success');
             this.viewOrderDetails();
           },
         });

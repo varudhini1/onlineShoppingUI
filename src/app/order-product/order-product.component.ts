@@ -35,10 +35,10 @@ export class OrderProductComponent implements OnInit {
 
   orderProduct() {
     this.orderDetails.productId = this.productId;
-    this.orderDetails.product = this.productDetail;
+    this.orderDetails.customerId = localStorage.getItem('CustomerId');
     this._orderService.orderProduct(this.orderDetails).subscribe({
-      next: (res: any) => {
-        Swal.fire('Good Job!', 'Product got ordered', res.toLocaleLowerCase());
+      next: () => {
+        Swal.fire('Good Job!', 'Product got ordered', 'success');
         this._route.navigate(['/orderDetails']);
       },
       error: (err: any) => {

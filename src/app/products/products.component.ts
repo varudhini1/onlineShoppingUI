@@ -35,12 +35,8 @@ export class ProductsComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this._productService.deleteProduct(productId).subscribe({
-          next: (res: any) => {
-            Swal.fire(
-              'Deleted!',
-              'Product got deleted.',
-              res.toLocaleLowerCase()
-            );
+          next: () => {
+            Swal.fire('Deleted!', 'Product got deleted.', 'success');
             this.getProducts();
           },
         });

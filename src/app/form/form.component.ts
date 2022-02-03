@@ -17,8 +17,8 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {}
   postProduct(data: IProducts) {
     this._productService.postProduct(data).subscribe({
-      next: (res: any) => {
-        Swal.fire('Good Job!', 'Product got posted', res.toLocaleLowerCase());
+      next: () => {
+        Swal.fire('Good Job!', 'Product got posted', 'success');
         this._route.navigate(['/products']);
       },
       error: (err: any) => {

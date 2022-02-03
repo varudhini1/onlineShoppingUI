@@ -1,6 +1,5 @@
 export interface IProducts {
   productId?: string;
-  quantity: number;
+  totalQuantity: number;
   productName: string;
-  isActive: boolean;
 }

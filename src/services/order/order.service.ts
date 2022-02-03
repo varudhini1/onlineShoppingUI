@@ -14,9 +14,9 @@ export class OrderService {
     return this.http.post(environment.postOrder, data);
   }
 
-  getOrderById(orderId: string) {
-    return this.http.get<string>(
-      `${environment.getOrderById}?productId=${orderId}`
+  getOrderById(orderId: string): Observable<Order> {
+    return this.http.get<Order>(
+      `${environment.getOrderById}?orderId=${orderId}`
     );
   }
 

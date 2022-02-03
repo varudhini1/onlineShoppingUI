@@ -1,17 +1,19 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-const baseUrl = 'https://proindia-onlineshop-api.azurewebsites.net';
-
+//const baseUrl = 'https://proindia-onlineshop-api.azurewebsites.net';
+const baseUrl = 'https://localhost:6001';
 export const environment = {
   production: false,
   postCustomerDetails: baseUrl + '/api/Customer/CreateCustomer',
+  getCustomerDetails: baseUrl + '/api/Customer/GetAllCustomers',
+  getCustomerById: baseUrl + '/api/Customer/GetCustomerById',
   getProductId: baseUrl + '/api/Product/GetProductById',
-  getProduct: baseUrl + '/api/Product/GetAllProduct',
+  getProduct: baseUrl + '/api/Product/GetAllProducts',
   postProduct: baseUrl + '/api/Product/AddProduct',
-  editProduct: baseUrl + '/api/Product/EditProduct',
+  editProduct: baseUrl + '/api/Product/UpdateProduct',
   deleteProduct: baseUrl + '/api/Product/DeleteProduct',
-  getOrder: baseUrl + '/api/Order/GetAllOrder',
+  getOrder: baseUrl + '/api/Order/GetAllOrders',
   postOrder: baseUrl + '/api/Order/AddOrder',
   updateOrder: baseUrl + '/api/Order/UpdateOrder',
   cancelOrder: baseUrl + '/api/Order/CancelOrder',

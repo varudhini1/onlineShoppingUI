@@ -10,8 +10,8 @@ import { environment } from 'src/environments/environment';
 export class ProductsService {
   constructor(private http: HttpClient) {}
 
-  getProductId(productId: string) {
-    return this.http.get<string>(
+  getProductId(productId: string): Observable<IProducts> {
+    return this.http.get<IProducts>(
       `${environment.getProductId}?productId=${productId}`
     );
   }

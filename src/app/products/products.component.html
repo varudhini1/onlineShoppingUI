@@ -14,10 +14,12 @@
 </form>
 <mat-grid-list cols="1" rowHeight="6.5em">
   <ng-container *ngFor="let product of products">
-    <mat-grid-tile *ngIf="product.quantity > 0 && product.productName?.trim()">
+    <mat-grid-tile
+      *ngIf="product.totalQuantity > 0 && product.productName?.trim()"
+    >
       <div class="details">
-        <b> Product Name :</b>{{ product.productName }}<br />
-        <b>Total Quantity:</b> {{ product.quantity }} <br />
+        <b> Product Name :</b>{{ product?.productName }}<br />
+        <b>Total Quantity:</b> {{ product.totalQuantity }} <br />
       </div>
       <div class="buttons">
         <a

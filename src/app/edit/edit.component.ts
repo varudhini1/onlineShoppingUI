@@ -34,12 +34,11 @@ export class EditComponent implements OnInit {
     const updateList: IProducts = {
       productId: this.productItem.productId,
       productName: this.productItem.productName,
-      quantity: this.productItem.quantity,
-      isActive: this.productItem.isActive,
+      totalQuantity: this.productItem.totalQuantity,
     };
     this._productService.editProduct(updateList).subscribe({
-      next: (res: any) => {
-        Swal.fire('Good Job!', 'Product got edited', res.toLocaleLowerCase());
+      next: () => {
+        Swal.fire('Good Job!', 'Product got edited', 'success');
         this._route.navigate(['/products']);
       },
       error: (err: any) => {
